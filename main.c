@@ -36,7 +36,7 @@ int main() {
     return 0;
 }
 
-void view_game_array(int board_size, int game_array[20][20]){
+void view_game_array(int board_size, int game_array[20][20]) {
     for(int i = 0; i < board_size; i++)
     {
         for(int j = 0; j < board_size; j++)
@@ -47,19 +47,18 @@ void view_game_array(int board_size, int game_array[20][20]){
     }
 }
 int check_input(int board_size, int input) {
-    if (input > board_size || input < 1){
+    if (input > board_size || input < 1) {
         return 1;
     }
     return 0;
 }
 
-
 // This function is for create an empty board for game.
 int create_game_array(int board_size){
     int game_array[20][20];
 
-    for (int i=0; i<board_size; i++){
-        for (int j=0; j<board_size; j++){
+    for (int i=0; i<board_size; i++) {
+        for (int j=0; j<board_size; j++) {
             game_array[i][j] = '.';
         }
     }
@@ -69,7 +68,6 @@ int create_game_array(int board_size){
     return 0;
 }
 
-
 void player_1_turn(int board_size, int player){
     int flag = 0;
     int pi, pj;
@@ -77,7 +75,7 @@ void player_1_turn(int board_size, int player){
     scanf("%d %d", &pi, &pj);
 
     while (flag == 0){
-        if (check_input(board_size, pi) != 0 || check_input(board_size, pj) != 0 ){
+        if (check_input(board_size, pi) != 0 || check_input(board_size, pj) != 0 ) {
             printf("%d, %d is outside the board.\n", pi, pj);
             printf("Please try again\n");
             scanf("%d %d", &pi, &pj);
@@ -90,7 +88,7 @@ void player_1_turn(int board_size, int player){
     for (int i = 0; i < board_size; i++) {
         for (int j = 0; j < board_size; j++) {
             if (i == pi-1 && j == pj-1) {
-                if (player == 1){
+                if (player == 1) {
                     printf("X");
                 } else {
                     printf("O");
