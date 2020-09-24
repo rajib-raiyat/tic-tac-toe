@@ -120,16 +120,28 @@ void make_turn(int board_size, int player) {
 }
 
 int check_win(int board_size, char game_array[20][20]) {
-    int won = 0; // boolean (0/1).
-
-    for (int i = 0; i < board_size && !won; i++) {
+    int flag = 0;
+    for (int i = 0; i < board_size; i++) {
         int j = 0;
+        for (int k = j + 1; k < board_size; k++) {
+            if (game_array[i][j] != game_array[i][k]) {
+                flag = 1;
+                break;
+            } else {
+                flag = 0;
+            }
+        }
 
-        while (j < board_size && game_array[i][j] == 'X') {
-            ++j;
-            won = j == board_size;
+        if (flag == 0) {
+            break;
         }
     }
 
-    return won;
+    if (flag == 0) {
+        printf("Match found");
+    } else {
+        printf("Match not found");
+    }
+
+    return flag;
 }
