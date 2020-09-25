@@ -218,6 +218,7 @@ void check_win(int board_size, int temp_array[20][20]) {
                 exit(0);
             }
         } else {
+            count = 0;
         }
     }
 }
