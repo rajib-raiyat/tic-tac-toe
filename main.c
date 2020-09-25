@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     int size = 3;
@@ -54,7 +55,6 @@ int main() {
             for (int j = 0; j < size; ++j) {
                 count = count + array[j][i];
             }
-
             if ((count == size) || (count == size * 2)) {
                 if (count == size) {
                     printf("P1 win\n");
@@ -63,9 +63,8 @@ int main() {
                     printf("P2 win\n");
                     flag = 1;
                 }
-            } else {
-                count = 0;
             }
+            count = 0;
         }
     }
 
@@ -83,6 +82,7 @@ int main() {
                     flag = 1;
                 }
             }
+            count = 0;
         }
     }
 
